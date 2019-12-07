@@ -1,0 +1,47 @@
+
+/*                  */
+/* Framework7 Fixes */
+/*                  */
+
+/* Messages / Chat: Visibilty of Avatar */
+.message:not(.message-last) .message-avatar {
+    opacity: 1; 
+}
+
+/* Messages / Chat: Color and size of icon avatar; */
+.material-avatar {
+  color: #ccc;
+  font-size: 28px!important;
+}
+
+/* Autocomplete Popup: Background order ; */
+.popup.modal-in {
+    z-index: 11500!important;
+    width: 60%;
+    height: 50%;
+    margin-top: 10%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.autocomplete-list .item-inner {
+	color: #000;
+}
+
+
+
+/*                  */
+/* iPad Adjustments */
+/*                  */
+
+/* iPad Vertical */
+@media (min-width: 768px) {
+  .panel.panel-left.panel-cover {
+    width: 320px;
+  }
+}
+/* iPad Horizontal */
+@media (min-width: 1024px) {
+  /* Let's hide panel-opener when left panel is visible */
+  .view-main .navbar .open-panel {
+    display: none;
+  }

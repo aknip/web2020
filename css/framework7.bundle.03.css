@@ -1,0 +1,464 @@
+/*====================
+  Color Themes
+  ==================== */
+.text-color-primary {
+  --f7-theme-color-text-color: var(--f7-theme-color);
+}
+.bg-color-primary {
+  --f7-theme-color-bg-color: var(--f7-theme-color);
+}
+.border-color-primary {
+  --f7-theme-color-border-color: var(--f7-theme-color);
+}
+.ripple-color-primary {
+  --f7-theme-color-ripple-color: rgba(var(--f7-theme-color-rgb), 0.3);
+}
+:root {
+  --f7-color-red: #ff3b30;
+  --f7-color-red-rgb: 255, 59, 48;
+  --f7-color-red-shade: #ff1407;
+  --f7-color-red-tint: #ff6259;
+  --f7-color-green: #4cd964;
+  --f7-color-green-rgb: 76, 217, 100;
+  --f7-color-green-shade: #2cd048;
+  --f7-color-green-tint: #6ee081;
+  --f7-color-blue: #2196f3;
+  --f7-color-blue-rgb: 33, 150, 243;
+  --f7-color-blue-shade: #0c82df;
+  --f7-color-blue-tint: #48a8f5;
+  --f7-color-pink: #ff2d55;
+  --f7-color-pink-rgb: 255, 45, 85;
+  --f7-color-pink-shade: #ff0434;
+  --f7-color-pink-tint: #ff5676;
+  --f7-color-yellow: #ffcc00;
+  --f7-color-yellow-rgb: 255, 204, 0;
+  --f7-color-yellow-shade: #d6ab00;
+  --f7-color-yellow-tint: #ffd429;
+  --f7-color-orange: #ff9500;
+  --f7-color-orange-rgb: 255, 149, 0;
+  --f7-color-orange-shade: #d67d00;
+  --f7-color-orange-tint: #ffa629;
+  --f7-color-purple: #9c27b0;
+  --f7-color-purple-rgb: 156, 39, 176;
+  --f7-color-purple-shade: #7e208f;
+  --f7-color-purple-tint: #b92fd1;
+  --f7-color-deeppurple: #673ab7;
+  --f7-color-deeppurple-rgb: 103, 58, 183;
+  --f7-color-deeppurple-shade: #563098;
+  --f7-color-deeppurple-tint: #7c52c8;
+  --f7-color-lightblue: #5ac8fa;
+  --f7-color-lightblue-rgb: 90, 200, 250;
+  --f7-color-lightblue-shade: #32bbf9;
+  --f7-color-lightblue-tint: #82d5fb;
+  --f7-color-teal: #009688;
+  --f7-color-teal-rgb: 0, 150, 136;
+  --f7-color-teal-shade: #006d63;
+  --f7-color-teal-tint: #00bfad;
+  --f7-color-lime: #cddc39;
+  --f7-color-lime-rgb: 205, 220, 57;
+  --f7-color-lime-shade: #bac923;
+  --f7-color-lime-tint: #d6e25c;
+  --f7-color-deeporange: #ff6b22;
+  --f7-color-deeporange-rgb: 255, 107, 34;
+  --f7-color-deeporange-shade: #f85200;
+  --f7-color-deeporange-tint: #ff864b;
+  --f7-color-gray: #8e8e93;
+  --f7-color-gray-rgb: 142, 142, 147;
+  --f7-color-gray-shade: #79797f;
+  --f7-color-gray-tint: #a3a3a7;
+  --f7-color-white: #ffffff;
+  --f7-color-white-rgb: 255, 255, 255;
+  --f7-color-white-shade: #ebebeb;
+  --f7-color-white-tint: #ffffff;
+  --f7-color-black: #000000;
+  --f7-color-black-rgb: 0, 0, 0;
+  --f7-color-black-shade: #000000;
+  --f7-color-black-tint: #141414;
+}
+.color-theme-red {
+  --f7-theme-color: #ff3b30;
+  --f7-theme-color-rgb: 255, 59, 48;
+  --f7-theme-color-shade: #ff1407;
+  --f7-theme-color-tint: #ff6259;
+}
+.color-theme-green {
+  --f7-theme-color: #4cd964;
+  --f7-theme-color-rgb: 76, 217, 100;
+  --f7-theme-color-shade: #2cd048;
+  --f7-theme-color-tint: #6ee081;
+}
+.color-theme-blue {
+  --f7-theme-color: #2196f3;
+  --f7-theme-color-rgb: 33, 150, 243;
+  --f7-theme-color-shade: #0c82df;
+  --f7-theme-color-tint: #48a8f5;
+}
+.color-theme-pink {
+  --f7-theme-color: #ff2d55;
+  --f7-theme-color-rgb: 255, 45, 85;
+  --f7-theme-color-shade: #ff0434;
+  --f7-theme-color-tint: #ff5676;
+}
+.color-theme-yellow {
+  --f7-theme-color: #ffcc00;
+  --f7-theme-color-rgb: 255, 204, 0;
+  --f7-theme-color-shade: #d6ab00;
+  --f7-theme-color-tint: #ffd429;
+}
+.color-theme-orange {
+  --f7-theme-color: #ff9500;
+  --f7-theme-color-rgb: 255, 149, 0;
+  --f7-theme-color-shade: #d67d00;
+  --f7-theme-color-tint: #ffa629;
+}
+.color-theme-purple {
+  --f7-theme-color: #9c27b0;
+  --f7-theme-color-rgb: 156, 39, 176;
+  --f7-theme-color-shade: #7e208f;
+  --f7-theme-color-tint: #b92fd1;
+}
+.color-theme-deeppurple {
+  --f7-theme-color: #673ab7;
+  --f7-theme-color-rgb: 103, 58, 183;
+  --f7-theme-color-shade: #563098;
+  --f7-theme-color-tint: #7c52c8;
+}
+.color-theme-lightblue {
+  --f7-theme-color: #5ac8fa;
+  --f7-theme-color-rgb: 90, 200, 250;
+  --f7-theme-color-shade: #32bbf9;
+  --f7-theme-color-tint: #82d5fb;
+}
+.color-theme-teal {
+  --f7-theme-color: #009688;
+  --f7-theme-color-rgb: 0, 150, 136;
+  --f7-theme-color-shade: #006d63;
+  --f7-theme-color-tint: #00bfad;
+}
+.color-theme-lime {
+  --f7-theme-color: #cddc39;
+  --f7-theme-color-rgb: 205, 220, 57;
+  --f7-theme-color-shade: #bac923;
+  --f7-theme-color-tint: #d6e25c;
+}
+.color-theme-deeporange {
+  --f7-theme-color: #ff6b22;
+  --f7-theme-color-rgb: 255, 107, 34;
+  --f7-theme-color-shade: #f85200;
+  --f7-theme-color-tint: #ff864b;
+}
+.color-theme-gray {
+  --f7-theme-color: #8e8e93;
+  --f7-theme-color-rgb: 142, 142, 147;
+  --f7-theme-color-shade: #79797f;
+  --f7-theme-color-tint: #a3a3a7;
+}
+.color-theme-white {
+  --f7-theme-color: #ffffff;
+  --f7-theme-color-rgb: 255, 255, 255;
+  --f7-theme-color-shade: #ebebeb;
+  --f7-theme-color-tint: #ffffff;
+}
+.color-theme-black {
+  --f7-theme-color: #000000;
+  --f7-theme-color-rgb: 0, 0, 0;
+  --f7-theme-color-shade: #000000;
+  --f7-theme-color-tint: #141414;
+}
+.color-red {
+  --f7-theme-color: #ff3b30;
+  --f7-theme-color-rgb: 255, 59, 48;
+  --f7-theme-color-shade: #ff1407;
+  --f7-theme-color-tint: #ff6259;
+}
+.text-color-red {
+  --f7-theme-color-text-color: #ff3b30;
+}
+.bg-color-red {
+  --f7-theme-color-bg-color: #ff3b30;
+}
+.border-color-red {
+  --f7-theme-color-border-color: #ff3b30;
+}
+.ripple-color-red,
+.ripple-red {
+  --f7-theme-color-ripple-color: rgba(255, 59, 48, 0.3);
+}
+.color-green {
+  --f7-theme-color: #4cd964;
+  --f7-theme-color-rgb: 76, 217, 100;
+  --f7-theme-color-shade: #2cd048;
+  --f7-theme-color-tint: #6ee081;
+}
+.text-color-green {
+  --f7-theme-color-text-color: #4cd964;
+}
+.bg-color-green {
+  --f7-theme-color-bg-color: #4cd964;
+}
+.border-color-green {
+  --f7-theme-color-border-color: #4cd964;
+}
+.ripple-color-green,
+.ripple-green {
+  --f7-theme-color-ripple-color: rgba(76, 217, 100, 0.3);
+}
+.color-blue {
+  --f7-theme-color: #2196f3;
+  --f7-theme-color-rgb: 33, 150, 243;
+  --f7-theme-color-shade: #0c82df;
+  --f7-theme-color-tint: #48a8f5;
+}
+.text-color-blue {
+  --f7-theme-color-text-color: #2196f3;
+}
+.bg-color-blue {
+  --f7-theme-color-bg-color: #2196f3;
+}
+.border-color-blue {
+  --f7-theme-color-border-color: #2196f3;
+}
+.ripple-color-blue,
+.ripple-blue {
+  --f7-theme-color-ripple-color: rgba(33, 150, 243, 0.3);
+}
+.color-pink {
+  --f7-theme-color: #ff2d55;
+  --f7-theme-color-rgb: 255, 45, 85;
+  --f7-theme-color-shade: #ff0434;
+  --f7-theme-color-tint: #ff5676;
+}
+.text-color-pink {
+  --f7-theme-color-text-color: #ff2d55;
+}
+.bg-color-pink {
+  --f7-theme-color-bg-color: #ff2d55;
+}
+.border-color-pink {
+  --f7-theme-color-border-color: #ff2d55;
+}
+.ripple-color-pink,
+.ripple-pink {
+  --f7-theme-color-ripple-color: rgba(255, 45, 85, 0.3);
+}
+.color-yellow {
+  --f7-theme-color: #ffcc00;
+  --f7-theme-color-rgb: 255, 204, 0;
+  --f7-theme-color-shade: #d6ab00;
+  --f7-theme-color-tint: #ffd429;
+}
+.text-color-yellow {
+  --f7-theme-color-text-color: #ffcc00;
+}
+.bg-color-yellow {
+  --f7-theme-color-bg-color: #ffcc00;
+}
+.border-color-yellow {
+  --f7-theme-color-border-color: #ffcc00;
+}
+.ripple-color-yellow,
+.ripple-yellow {
+  --f7-theme-color-ripple-color: rgba(255, 204, 0, 0.3);
+}
+.color-orange {
+  --f7-theme-color: #ff9500;
+  --f7-theme-color-rgb: 255, 149, 0;
+  --f7-theme-color-shade: #d67d00;
+  --f7-theme-color-tint: #ffa629;
+}
+.text-color-orange {
+  --f7-theme-color-text-color: #ff9500;
+}
+.bg-color-orange {
+  --f7-theme-color-bg-color: #ff9500;
+}
+.border-color-orange {
+  --f7-theme-color-border-color: #ff9500;
+}
+.ripple-color-orange,
+.ripple-orange {
+  --f7-theme-color-ripple-color: rgba(255, 149, 0, 0.3);
+}
+.color-purple {
+  --f7-theme-color: #9c27b0;
+  --f7-theme-color-rgb: 156, 39, 176;
+  --f7-theme-color-shade: #7e208f;
+  --f7-theme-color-tint: #b92fd1;
+}
+.text-color-purple {
+  --f7-theme-color-text-color: #9c27b0;
+}
+.bg-color-purple {
+  --f7-theme-color-bg-color: #9c27b0;
+}
+.border-color-purple {
+  --f7-theme-color-border-color: #9c27b0;
+}
+.ripple-color-purple,
+.ripple-purple {
+  --f7-theme-color-ripple-color: rgba(156, 39, 176, 0.3);
+}
+.color-deeppurple {
+  --f7-theme-color: #673ab7;
+  --f7-theme-color-rgb: 103, 58, 183;
+  --f7-theme-color-shade: #563098;
+  --f7-theme-color-tint: #7c52c8;
+}
+.text-color-deeppurple {
+  --f7-theme-color-text-color: #673ab7;
+}
+.bg-color-deeppurple {
+  --f7-theme-color-bg-color: #673ab7;
+}
+.border-color-deeppurple {
+  --f7-theme-color-border-color: #673ab7;
+}
+.ripple-color-deeppurple,
+.ripple-deeppurple {
+  --f7-theme-color-ripple-color: rgba(103, 58, 183, 0.3);
+}
+.color-lightblue {
+  --f7-theme-color: #5ac8fa;
+  --f7-theme-color-rgb: 90, 200, 250;
+  --f7-theme-color-shade: #32bbf9;
+  --f7-theme-color-tint: #82d5fb;
+}
+.text-color-lightblue {
+  --f7-theme-color-text-color: #5ac8fa;
+}
+.bg-color-lightblue {
+  --f7-theme-color-bg-color: #5ac8fa;
+}
+.border-color-lightblue {
+  --f7-theme-color-border-color: #5ac8fa;
+}
+.ripple-color-lightblue,
+.ripple-lightblue {
+  --f7-theme-color-ripple-color: rgba(90, 200, 250, 0.3);
+}
+.color-teal {
+  --f7-theme-color: #009688;
+  --f7-theme-color-rgb: 0, 150, 136;
+  --f7-theme-color-shade: #006d63;
+  --f7-theme-color-tint: #00bfad;
+}
+.text-color-teal {
+  --f7-theme-color-text-color: #009688;
+}
+.bg-color-teal {
+  --f7-theme-color-bg-color: #009688;
+}
+.border-color-teal {
+  --f7-theme-color-border-color: #009688;
+}
+.ripple-color-teal,
+.ripple-teal {
+  --f7-theme-color-ripple-color: rgba(0, 150, 136, 0.3);
+}
+.color-lime {
+  --f7-theme-color: #cddc39;
+  --f7-theme-color-rgb: 205, 220, 57;
+  --f7-theme-color-shade: #bac923;
+  --f7-theme-color-tint: #d6e25c;
+}
+.text-color-lime {
+  --f7-theme-color-text-color: #cddc39;
+}
+.bg-color-lime {
+  --f7-theme-color-bg-color: #cddc39;
+}
+.border-color-lime {
+  --f7-theme-color-border-color: #cddc39;
+}
+.ripple-color-lime,
+.ripple-lime {
+  --f7-theme-color-ripple-color: rgba(205, 220, 57, 0.3);
+}
+.color-deeporange {
+  --f7-theme-color: #ff6b22;
+  --f7-theme-color-rgb: 255, 107, 34;
+  --f7-theme-color-shade: #f85200;
+  --f7-theme-color-tint: #ff864b;
+}
+.text-color-deeporange {
+  --f7-theme-color-text-color: #ff6b22;
+}
+.bg-color-deeporange {
+  --f7-theme-color-bg-color: #ff6b22;
+}
+.border-color-deeporange {
+  --f7-theme-color-border-color: #ff6b22;
+}
+.ripple-color-deeporange,
+.ripple-deeporange {
+  --f7-theme-color-ripple-color: rgba(255, 107, 34, 0.3);
+}
+.color-gray {
+  --f7-theme-color: #8e8e93;
+  --f7-theme-color-rgb: 142, 142, 147;
+  --f7-theme-color-shade: #79797f;
+  --f7-theme-color-tint: #a3a3a7;
+}
+.text-color-gray {
+  --f7-theme-color-text-color: #8e8e93;
+}
+.bg-color-gray {
+  --f7-theme-color-bg-color: #8e8e93;
+}
+.border-color-gray {
+  --f7-theme-color-border-color: #8e8e93;
+}
+.ripple-color-gray,
+.ripple-gray {
+  --f7-theme-color-ripple-color: rgba(142, 142, 147, 0.3);
+}
+.color-white {
+  --f7-theme-color: #ffffff;
+  --f7-theme-color-rgb: 255, 255, 255;
+  --f7-theme-color-shade: #ebebeb;
+  --f7-theme-color-tint: #ffffff;
+}
+.text-color-white {
+  --f7-theme-color-text-color: #ffffff;
+}
+.bg-color-white {
+  --f7-theme-color-bg-color: #ffffff;
+}
+.border-color-white {
+  --f7-theme-color-border-color: #ffffff;
+}
+.ripple-color-white,
+.ripple-white {
+  --f7-theme-color-ripple-color: rgba(255, 255, 255, 0.3);
+}
+.color-black {
+  --f7-theme-color: #000000;
+  --f7-theme-color-rgb: 0, 0, 0;
+  --f7-theme-color-shade: #000000;
+  --f7-theme-color-tint: #141414;
+}
+.text-color-black {
+  --f7-theme-color-text-color: #000000;
+}
+.bg-color-black {
+  --f7-theme-color-bg-color: #000000;
+}
+.border-color-black {
+  --f7-theme-color-border-color: #000000;
+}
+.ripple-color-black,
+.ripple-black {
+  --f7-theme-color-ripple-color: rgba(0, 0, 0, 0.3);
+}
+@font-face {
+  font-family: 'framework7-core-icons';
+  src: url("data:application/font-woff;charset=utf-8;base64, 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") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'framework7-skeleton';
+  src: url("data:application/font-woff;charset=utf-8;base64, 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") format("woff");
+  font-weight: 300, 400, 500, 600, 700;
+  font-style: normal, italic;
+}

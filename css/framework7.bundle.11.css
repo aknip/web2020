@@ -1,0 +1,288 @@
+/* === Subnavbar === */
+:root {
+  /*
+  --f7-subnavbar-bg-image: var(--f7-bars-bg-image);
+  --f7-subnavbar-bg-color: var(--f7-bars-bg-color);
+  --f7-subnavbar-bg-color-rgb: var(--f7-bars-bg-color-rgb);
+  --f7-subnavbar-border-color: var(--f7-bars-border-color);
+  --f7-subnavbar-link-color: var(--f7-bars-link-color);
+  --f7-subnavbar-text-color: var(--f7-bars-text-color);
+  */
+  --f7-subnavbar-title-line-height: 1.2;
+}
+.ios {
+  --f7-subnavbar-height: 44px;
+  --f7-subnavbar-inner-padding-left: 8px;
+  --f7-subnavbar-inner-padding-right: 8px;
+  --f7-subnavbar-title-font-size: 34px;
+  --f7-subnavbar-title-font-weight: 700;
+  --f7-subnavbar-title-letter-spacing: -0.03em;
+  --f7-subnavbar-title-margin-left: 8px;
+  --f7-subnavbar-shadow-image: none;
+  /*
+  --f7-subnavbar-link-height: var(--f7-subnavbar-height);
+  --f7-subnavbar-link-line-height: var(--f7-subnavbar-height);
+  */
+}
+.md {
+  --f7-subnavbar-height: 48px;
+  --f7-subnavbar-inner-padding-left: 16px;
+  --f7-subnavbar-inner-padding-right: 16px;
+  --f7-subnavbar-title-font-size: 20px;
+  --f7-subnavbar-title-font-weight: 500;
+  --f7-subnavbar-title-letter-spacing: 0;
+  --f7-subnavbar-title-margin-left: 0px;
+  --f7-subnavbar-shadow-image: var(--f7-bars-shadow-bottom-image);
+  /*
+  --f7-subnavbar-link-height: var(--f7-subnavbar-height);
+  --f7-subnavbar-link-line-height: var(--f7-subnavbar-height);
+  */
+}
+.aurora {
+  --f7-subnavbar-height: 38px;
+  --f7-subnavbar-inner-padding-left: 16px;
+  --f7-subnavbar-inner-padding-right: 16px;
+  --f7-subnavbar-title-font-size: 26px;
+  --f7-subnavbar-title-font-weight: bold;
+  --f7-subnavbar-title-letter-spacing: -0.03em;
+  --f7-subnavbar-title-margin-left: 0px;
+  --f7-subnavbar-shadow-image: none;
+  --f7-subnavbar-link-height: auto;
+  --f7-subnavbar-link-line-height: inherit;
+}
+.subnavbar {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 600;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: var(--f7-subnavbar-bg-image, var(--f7-bars-bg-image));
+  background-color: var(--f7-subnavbar-bg-color, var(--f7-bars-bg-color));
+  color: var(--f7-subnavbar-text-color, var(--f7-bars-text-color));
+}
+@supports ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
+  .ios-translucent-bars .subnavbar {
+    background-color: rgba(var(--f7-subnavbar-bg-color-rgb, var(--f7-bars-bg-color-rgb)), var(--f7-bars-translucent-opacity));
+    -webkit-backdrop-filter: saturate(180%) blur(var(--f7-bars-translucent-blur));
+            backdrop-filter: saturate(180%) blur(var(--f7-bars-translucent-blur));
+  }
+}
+.subnavbar .subnavbar-title {
+  position: relative;
+  overflow: hidden;
+  text-overflow: ellpsis;
+  white-space: nowrap;
+  font-size: var(--f7-subnavbar-title-font-size);
+  font-weight: var(--f7-subnavbar-title-font-weight);
+  text-align: left;
+  display: inline-block;
+  line-height: var(--f7-subnavbar-title-line-height);
+  letter-spacing: var(--f7-subnavbar-title-letter-spacing);
+  margin-left: var(--f7-subnavbar-title-margin-left);
+}
+.subnavbar .left,
+.subnavbar .right {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.subnavbar .right:first-child {
+  position: absolute;
+  height: 100%;
+}
+.subnavbar a {
+  color: var(--f7-subnavbar-link-color, var(--f7-bars-link-color, var(--f7-theme-color)));
+}
+.subnavbar a.link {
+  line-height: var(--f7-subnavbar-link-line-height, var(--f7-subnavbar-height));
+  height: var(--f7-subnavbar-link-height, var(--f7-subnavbar-height));
+}
+.subnavbar a.icon-only {
+  min-width: var(--f7-subnavbar-height);
+}
+.subnavbar.no-hairline:after,
+.subnavbar.no-border:after {
+  display: none !important;
+}
+.subnavbar.no-shadow:before,
+.subnavbar.navbar-hidden:before {
+  display: none !important;
+}
+.subnavbar:after,
+.subnavbar:before {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.subnavbar:after {
+  content: '';
+  position: absolute;
+  background-color: var(--f7-subnavbar-border-color, var(--f7-bars-border-color));
+  display: block;
+  z-index: 15;
+  top: auto;
+  right: auto;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  transform-origin: 50% 100%;
+  transform: scaleY(calc(1 / var(--f7-device-pixel-ratio)));
+}
+.subnavbar:before {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 100%;
+  top: 100%;
+  bottom: auto;
+  height: 8px;
+  pointer-events: none;
+  background: var(--f7-subnavbar-shadow-image);
+}
+.subnavbar-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 0 calc(var(--f7-subnavbar-inner-padding-left) + var(--f7-safe-area-right)) 0 calc(var(--f7-subnavbar-inner-padding-right) + var(--f7-safe-area-left));
+}
+.subnavbar-inner.stacked {
+  display: none;
+}
+.navbar .subnavbar {
+  top: 100%;
+}
+.views > .subnavbar,
+.view > .subnavbar,
+.page > .subnavbar {
+  position: absolute;
+}
+.navbar ~ * .subnavbar,
+.navbars ~ * .subnavbar,
+.page-with-subnavbar .navbar ~ .subnavbar,
+.page-with-subnavbar .navbar ~ * .subnavbar,
+.navbar ~ .page-with-subnavbar:not(.no-navbar) .subnavbar,
+.navbar ~ .subnavbar,
+.navbars ~ .page-with-subnavbar:not(.no-navbar) .subnavbar,
+.navbars ~ .subnavbar {
+  top: calc(var(--f7-navbar-height) + var(--f7-safe-area-top));
+}
+.navbar ~ .page-with-navbar-large:not(.no-navbar) .subnavbar,
+.navbars ~ .page-with-navbar-large:not(.no-navbar) .subnavbar,
+.page-with-subnavbar.page-with-navbar-large .navbar ~ .subnavbar,
+.page-with-subnavbar.page-with-navbar-large .navbar ~ * .subnavbar,
+.navbar .title-large ~ .subnavbar {
+  top: calc(var(--f7-navbar-height) + var(--f7-navbar-large-title-height) + var(--f7-safe-area-top));
+  transform: translate3d(0, calc(-1 * var(--f7-navbar-large-collapse-progress) * var(--f7-navbar-large-title-height)), 0);
+}
+.page-with-subnavbar,
+.subnavbar ~ * {
+  --f7-page-subnavbar-offset: var(--f7-subnavbar-height);
+}
+.ios .subnavbar {
+  height: calc(var(--f7-subnavbar-height) + 1px);
+  margin-top: -1px;
+  padding-top: 1px;
+}
+.ios .subnavbar .title {
+  align-self: flex-start;
+  flex-shrink: 10;
+}
+.ios .subnavbar .left a + a,
+.ios .subnavbar .right a + a {
+  margin-left: 16px;
+}
+.ios .subnavbar .left {
+  margin-right: 10px;
+}
+.ios .subnavbar .right {
+  margin-left: 10px;
+}
+.ios .subnavbar .right:first-child {
+  right: 8px;
+}
+.ios .subnavbar a.link {
+  justify-content: flex-start;
+}
+.ios .subnavbar a.icon-only {
+  justify-content: center;
+  margin: 0;
+}
+.md .subnavbar {
+  height: var(--f7-subnavbar-height);
+}
+.md .subnavbar .right {
+  margin-left: auto;
+}
+.md .subnavbar .right:first-child {
+  right: 16px;
+}
+.md .subnavbar a.link {
+  justify-content: center;
+  padding: 0 16px;
+}
+.md .subnavbar a.link:before {
+  content: '';
+  width: 152%;
+  height: 152%;
+  position: absolute;
+  left: -26%;
+  top: -26%;
+  background-image: radial-gradient(circle at center, var(--f7-link-highlight-color) 66%, rgba(255, 255, 255, 0) 66%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition-duration: 600ms;
+}
+.md .subnavbar a.link.active-state:before {
+  opacity: 1;
+  transition-duration: 150ms;
+}
+.md .subnavbar a.icon-only {
+  flex-shrink: 0;
+}
+.md .subnavbar-inner > a.link:first-child {
+  margin-left: calc(-1 * var(--f7-subnavbar-inner-padding-left));
+}
+.md .subnavbar-inner > a.link:last-child {
+  margin-right: calc(-1 * var(--f7-subnavbar-inner-padding-right));
+}
+.aurora .subnavbar {
+  height: calc(var(--f7-subnavbar-height) + 1px);
+  margin-top: -1px;
+  padding-top: 1px;
+}
+.aurora .subnavbar .title {
+  align-self: flex-start;
+  flex-shrink: 10;
+}
+.aurora .subnavbar .left a + a,
+.aurora .subnavbar .right a + a {
+  margin-left: 10px;
+}
+.aurora .subnavbar .left {
+  margin-right: 10px;
+}
+.aurora .subnavbar .right {
+  margin-left: 10px;
+}
+.aurora .subnavbar .right:first-child {
+  right: 16px;
+}
+.aurora .subnavbar a.link {
+  justify-content: flex-start;
+}
+.aurora .subnavbar a.icon-only {
+  justify-content: center;
+  margin: 0;
+}

@@ -1,0 +1,39 @@
+/* === Link === */
+:root {
+  --f7-link-highlight-black: rgba(0, 0, 0, 0.1);
+  --f7-link-highlight-white: rgba(255, 255, 255, 0.15);
+  --f7-link-highlight-color: var(--f7-link-highlight-black);
+}
+.theme-dark {
+  --f7-link-highlight-color: var(--f7-link-highlight-white);
+}
+.link,
+.tab-link {
+  display: inline-flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  z-index: 1;
+}
+.link i + span,
+.link i + i,
+.link span + i,
+.link span + span {
+  margin-left: 4px;
+}
+.ios .link {
+  transition: opacity 300ms;
+}
+.ios .link.active-state {
+  opacity: 0.3;
+  transition-duration: 0ms;
+}
+.aurora .link {
+  transition: opacity 300ms;
+}
+.aurora .link.active-state {
+  opacity: 0.3;
+  transition-duration: 0ms;
+}

@@ -1,0 +1,158 @@
+/* === Icon === */
+.f7-icons,
+.material-icons {
+  width: 1em;
+  height: 1em;
+}
+i.icon {
+  display: inline-block;
+  vertical-align: middle;
+  background-size: 100% auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-style: normal;
+  position: relative;
+}
+.icon-back:after,
+.icon-prev:after,
+.icon-forward:after,
+.icon-next:after {
+  font-family: 'framework7-core-icons';
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
+  text-align: center;
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+}
+.icon[class*="color-"] {
+  color: var(--f7-theme-color);
+}
+.ios .icon-back,
+.ios .icon-prev,
+.ios .icon-forward,
+.ios .icon-next {
+  width: 12px;
+  height: 20px;
+  line-height: 20px;
+}
+.ios .icon-back:after,
+.ios .icon-prev:after,
+.ios .icon-forward:after,
+.ios .icon-next:after {
+  line-height: inherit;
+}
+.ios .icon-prev:after,
+.ios .icon-next:after {
+  font-size: 16px;
+}
+.ios .icon-back:after,
+.ios .icon-prev:after {
+  content: 'chevron_left_ios';
+}
+.ios .icon-forward:after,
+.ios .icon-next:after {
+  content: 'chevron_right_ios';
+}
+.md .icon-back,
+.md .icon-forward,
+.md .icon-next,
+.md .icon-prev {
+  width: 24px;
+  height: 24px;
+}
+.md .icon-back:after,
+.md .icon-forward:after,
+.md .icon-next:after,
+.md .icon-prev:after {
+  line-height: 1.2;
+}
+.md .icon-back:after {
+  content: 'arrow_left_md';
+}
+.md .icon-forward:after {
+  content: 'arrow_right_md';
+}
+.md .icon-next:after {
+  content: 'chevron_right_md';
+}
+.md .icon-prev:after {
+  content: 'chevron_left_md';
+}
+.aurora .f7-icons,
+.aurora .material-icons {
+  font-size: 18px;
+}
+.aurora .icon-back,
+.aurora .icon-prev,
+.aurora .icon-forward,
+.aurora .icon-next {
+  width: 9px;
+  height: 14px;
+  line-height: 14px;
+}
+.aurora .icon-back:after,
+.aurora .icon-prev:after,
+.aurora .icon-forward:after,
+.aurora .icon-next:after {
+  line-height: inherit;
+}
+.aurora .icon-back:after,
+.aurora .icon-prev:after {
+  content: 'chevron_left_aurora';
+}
+.aurora .icon-forward:after,
+.aurora .icon-next:after {
+  content: 'chevron_right_aurora';
+}
+.custom-modal-backdrop {
+  z-index: 10500;
+}
+.custom-modal-backdrop,
+.actions-backdrop,
+.dialog-backdrop,
+.popover-backdrop,
+.popup-backdrop,
+.preloader-backdrop,
+.sheet-backdrop {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 13000;
+  visibility: hidden;
+  opacity: 0;
+  transition-duration: 400ms;
+}
+.custom-modal-backdrop.not-animated,
+.actions-backdrop.not-animated,
+.dialog-backdrop.not-animated,
+.popover-backdrop.not-animated,
+.popup-backdrop.not-animated,
+.preloader-backdrop.not-animated,
+.sheet-backdrop.not-animated {
+  transition-duration: 0ms;
+}
+.custom-modal-backdrop.backdrop-in,
+.actions-backdrop.backdrop-in,
+.dialog-backdrop.backdrop-in,
+.popover-backdrop.backdrop-in,
+.popup-backdrop.backdrop-in,
+.preloader-backdrop.backdrop-in,
+.sheet-backdrop.backdrop-in {
+  visibility: visible;
+  opacity: 1;
+}
