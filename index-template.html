@@ -205,17 +205,12 @@
 
 
 
-                        <div class="ae-3 toolbar messagebar">
-                            <div class="toolbar-inner">
-                                <div class="messagebar-area"><textarea class="resizable" placeholder="Message"></textarea></div><a class="link send-link" href="#">Send</a>
-                            </div>
-                        </div>
-                        <div class="ae-4 page-content messages-content">
+                        <div class="ae-4 page-content messages-content" style="margin-top: -50px">
                             <div class="messages">
                                 <div class="messages-title"><b>Sunday, Feb 9,</b> 12:58</div>
                                 <div class="message message-sent">
                                     <!-- <div class="message-avatar" style="background-image:url(assets/img/avatar-1.jpg)"></div> -->
-                                    <i class="material-icons material-avatar md-48">verified_user</i>
+                                    <i class="material-icons icon-avatar md-48">verified_user</i>
                                     <div class="message-content">
                                         <div class="message-name">John Doe</div>
                                         <div class="message-header">Message header</div>
@@ -227,21 +222,8 @@
                                         <div class="message-footer">Message footer</div>
                                     </div>
                                 </div>
-                                <div class="message message-received">
-                                    <i class="material-icons material-avatar md-48">account_circle</i>
-                                    <div class="message-content">
-                                        <div class="message-name">John Doe</div>
-                                        <div class="message-header">Message header</div>
-                                        <div class="message-bubble">
-                                            <div class="message-text-header">Text header</div>
-                                            <div class="message-text">Lorem ipsum.</div>
-                                            <div class="message-text-footer">Text footer</div>
-                                        </div>
-                                        <div class="message-footer">Message footer</div>
-                                    </div>
-                                </div>
                                 <div class="message message-sent">
-                                    <i class="material-icons material-avatar md-48">verified_user</i>
+                                    <i class="material-icons icon-avatar md-48">verified_user</i>
                                     <div class="message-content">
                                         <div class="message-bubble">
                                             <div class="message-text">Hi, Kate</div>
@@ -249,8 +231,7 @@
                                     </div>
                                 </div>
                                 <div class="message message-received">
-                                    <i class="f7-icons">home</i>
-                                    <i class="icon icon-next"></i>
+                                    <i class="f7-icons icon-avatar">alarm</i>
                                     <div class="message-content">
                                         <div class="message-name">Kate</div>
                                         <div class="message-bubble">
@@ -261,6 +242,13 @@
                                 
                             </div>
                         </div>
+                        
+                        <div class="ae-3 toolbar messagebar">
+                            <div class="toolbar-inner">
+                                <div class="messagebar-area"><textarea class="resizable" placeholder="Message"></textarea></div><span class="link send-link" id="bottom">Send</span>	
+                            </div>
+                        </div>
+                        
                     </div>
 
 
@@ -322,7 +310,13 @@
 
                     <div class="fix-9-12 toCenter margin-bottom-5">
                         <h1 class="margin-bottom-2 ae-1">Simple story</h1>
-                        <p class="larger light ae-2"><span class="opacity-8">Any attempt to separate design, to make it a thing-by-itself, works counter to the inherent value of design as the primary, underlying matrix of life.</span></p>
+                        <p class="larger light ae-2"><span class="opacity-8">Icon expamles:</span></p>
+                        <p>
+                        	Slides Material Icons: <i class="material-icons">verified_user</i><br>
+                        	Framework 7 Internal: <i class="icon icon-next"></i><br>
+                        	Framework 7 Icons Font: <i class="f7-icons">alarm</i>
+                        </p>
+                        
                     </div>
                     <div class="fix-12-12">
                         <ul class="flex later equal left">
