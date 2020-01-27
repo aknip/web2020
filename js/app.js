@@ -20,6 +20,7 @@ function mainApp() {
 
 
 
+
   // AUTO COMPLETE
 
   // Fruits data demo array
@@ -151,11 +152,11 @@ function mainApp() {
       'Amazing!!!'
   ]
   var people = [{
-          name: 'Kate Johnson',
+          name: 'mgm Bot',
           avatar: 'https://cdn.framework7.io/placeholder/people-100x100-9.jpg'
       },
       {
-          name: 'Blue Ninja',
+          name: 'mgm Bot',
           avatar: 'https://cdn.framework7.io/placeholder/people-100x100-7.jpg'
       }
   ];
@@ -170,7 +171,7 @@ function mainApp() {
 
           // Show typing indicator
           messages.showTyping({
-              header: person.name + ' is typing',
+              header: person.name + ' antwortet',
               avatar: person.avatar
           });
 
@@ -191,6 +192,93 @@ function mainApp() {
           }, 1000);
       }, 500);
   }
+
+
+  // run fake chat
+  // 01
+  setTimeout(function() {
+  messages.addMessage({
+      text: "Wieviele Mitarbeiter hat mgm?",
+  });
+  }, 2000);
+
+  setTimeout(function() {
+      // Get random answer and random person
+      var answer = 'mgm hat 700 Mitarbeiter an 16 Standorten. Neben Deutschland ist mgm in Frankreich, Schweiz, Österreich, Frankreich, Tschechische Republik, Vietnam und USA vertreten. <a class="chatlink" href="mgm-tp-02.html#drei">Link</a>';
+      var person = people[0];
+
+      // Show typing indicator
+      messages.showTyping({
+          header: person.name + ' antwortet'
+          //avatar: person.avatar
+      });
+
+      setTimeout(function() {
+          // Add received dummy message
+          messages.addMessage({
+              text: answer,
+              type: 'received',
+              name: person.name
+              //avatar: person.avatar
+          });
+          // Hide typing indicator
+          messages.hideTyping();
+          responseInProgress = false;
+          // Scroll to bottom
+          var element_to_scroll_to = $('#bottom')[0];
+          element_to_scroll_to.scrollIntoView({ behavior: 'smooth'});
+      }, 3000);
+  }, 3000);
+  //02
+  setTimeout(function() {
+  messages.addMessage({
+      text: "Für welche Kunden arbeitet mgm?",
+  });
+  }, 10000);
+
+  setTimeout(function() {
+      // Get random answer and random person
+      var answer = 'mgm arbeitet für den Public Sector (Öffentliche Auftraggber), den Handel (Commerce) und Industrieversicherungen.';
+      var person = people[0];
+
+      // Show typing indicator
+      messages.showTyping({
+          header: person.name + ' antwortet'
+          //avatar: person.avatar
+      });
+
+      setTimeout(function() {
+          // Add received dummy message
+          messages.addMessage({
+              text: answer,
+              type: 'received',
+              name: person.name
+              //avatar: person.avatar
+          });
+          // Hide typing indicator
+          messages.hideTyping();
+          responseInProgress = false;
+          // Scroll to bottom
+          var element_to_scroll_to = $('#bottom')[0];
+          element_to_scroll_to.scrollIntoView({ behavior: 'smooth'});
+      }, 3000);
+
+      setTimeout(function() {
+          // Add received dummy message
+          messages.addMessage({
+              text: 'Zu unseren Kunden zählen u.a. Elster Online, Lidl, REWE, HDI und Allianz.',
+              type: 'received',
+              name: person.name
+              //avatar: person.avatar
+          });
+          // Hide typing indicator
+          messages.hideTyping();
+          responseInProgress = false;
+          // Scroll to bottom
+          var element_to_scroll_to = $('#bottom')[0];
+          element_to_scroll_to.scrollIntoView({ behavior: 'smooth'});
+      }, 4000);
+  }, 13000);
 
 }
 
