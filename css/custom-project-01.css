@@ -1,0 +1,196 @@
+
+/* Slides-Popup-Hintergrund hellgrau  */
+.popup:not([class*=fade]) {
+    background: rgba(164, 174, 188, 0.9);
+}
+
+.myvideo video {
+	width: 100%;
+}
+
+ul.menu li {
+	font-size: 14px!important;
+}
+
+/* smaller navigation, no shadow/line */
+.panel.top {
+	padding: 0px;
+	box-shadow: none;
+}
+
+
+
+.home-head {
+	font-size: 28px;
+    font-weight: 100!important;
+    color: #0a6fbe;
+}
+
+
+/* H1 Blue Headlines */ 
+@media (min-width: 1240px) {
+	h1.smallest {
+		font-size: 28px;
+	    font-weight: 100;
+	    color: #0a6fbe;
+	}
+}
+
+
+/* Optimizes vertical spacing - only if in "Scroll-Mode!" */ 
+.scroll .wrap {
+	padding: 0px calc(8% + 15px)!important;
+}
+
+.scroll .container {
+	height:auto!important;
+	margin-top:10px!important;
+	margin-bottom:40px!important;
+}
+
+.scroll .extraMarginTopIfScrolled {
+	margin-top:150px!important
+}
+
+
+/* Crop image  */
+
+.image-crop {
+  margin: 0 auto; 
+  overflow: hidden;
+}
+
+
+/* Zoom Image on hover , see https://codepen.io/zpipe07/pen/rVydym */
+
+.image-zoom {
+  margin: 0 auto; 
+  overflow: hidden;
+  font-size: 0;
+}
+.image-zoom img {
+  transition: transform 1s ease-in-out;
+}
+.image-zoom:hover img {
+  transform: scale(1.1);
+}
+
+
+
+
+
+/*                                */
+/* animated css library (excerpt) */
+/*                                */
+
+/* animated Core */ 
+
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.animated.alternate {
+  -webkit-direction: alternate;
+  animation-direction: alternate;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+
+.animated.delay-1s {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+
+.animated.ultraslow {
+  -webkit-animation-duration: 10s;
+  animation-duration: 10s;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+}
+
+
+/* zoomIn */ 
+
+@-webkit-keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}
+
+
+
+/* zoomInMicro from 1.00 to 1.08 */ 
+
+@-webkit-keyframes zoomInMicro {
+  from {
+    -webkit-transform: scale3d(1.0, 1.0, 1.0);
+    transform: scale3d(1.0, 1.0, 1.0);
+  }
+
+  100% {
+    -webkit-transform: scale3d(1.08, 1.08, 1.08);
+    transform: scale3d(1.08, 1.08, 1.08);
+  }
+}
+
+@keyframes zoomInMicro {
+  from {
+    -webkit-transform: scale3d(1.0, 1.0, 1.0);
+    transform: scale3d(1.0, 1.0, 1.0);
+  }
+
+  100% {
+    -webkit-transform: scale3d(1.08, 1.08, 1.08);
+    transform: scale3d(1.08, 1.08, 1.08);
+  }
+}
+
+.zoomInMicro {
+  -webkit-animation-name: zoomInMicro;
+  animation-name: zoomInMicro;
+}
+
+
+
+
+
+/*
+.background, .scroll .slide:not(.autoHeight) .background {
+    min-height: 60vH;
+    max-height: 60vH;
+    color: white;
+}
+*/
