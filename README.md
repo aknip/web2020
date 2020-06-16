@@ -1,6 +1,12 @@
 # web2020
 
 
+Uses 
+- Slides 5.0.1? newest is 5.1
+- Framework7 5.1.3
+
+
+
 Changes due to Framework7 compatibility:
 
 1. framework7.bundle.css
