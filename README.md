@@ -2,7 +2,8 @@
 
 
 Uses 
-- Slides 5.0.1? newest is 5.1
+- Slides 5.1
+- jQuery v3.5.1 
 - Framework7 5.1.3
 
 
@@ -16,7 +17,7 @@ line 9776 - 10024 => .panel
 
 
 2. slides.js
-new global parameter added, line 43, 657:
+new global parameter added, line 43 and 661:
 window.animationTrigger = 8; // triggers animation when new slides comes into viewport, 2 = at 50% height
 
 

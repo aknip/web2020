@@ -1,7 +1,7 @@
 /*
 
    _____ _       _                 _  _____
-  / ___/| (*)   | |               | |/ ___/  v 5.0.3
+  / ___/| (*)   | |               | |/ ___/  v 5.1
  | (___ | |_  __| | ___ ____      | | (___
   \___ \| | |/ _` |/ _ / __/  _   | |\___ \
   ____) | | | (_| |  __\__ \ | |__| |____) |
@@ -9,11 +9,11 @@
 
 
 This file contains scripts required for the proper functionality and display
-of your Slides Project. It also requires plugins.js and jquery-3.3.1 to run this script properly.
+of your Slides Project. It also requires plugins.js and jquery-3.4.1 to run this script properly.
 
 https://designmodo.com/slides/
 
-*/
+*/ 
 
 window.inAction = 1;
 window.allowSlide = 1;
@@ -170,15 +170,19 @@ $(document).ready(function() { "use strict";
   if (window.preload){
     var imgs = [];
     $("*").each(function() {
-      var img_path;
-      if($(this).css("background-image") !== "none") {
-        img_path = $(this).css("background-image").replace(/.*\s?url\([\'\"]?/, '').replace(/[\'\"]?\).*/, '');
-      } else if ($(this).is('img')){
-        img_path = $(this).attr("src");
+      var img_path,
+          $img = $(this);
+
+      if( $img.css("background-image") !== "none") {
+        img_path = $img.css("background-image").replace(/.*\s?url\([\'\"]?/, '').replace(/[\'\"]?\).*/, '');
+      } else if ($img.is('img')){
+        img_path = $img.attr("src");
       }
       // if( !/(linear-|data:).+/.test(img_path) )
-      if( img_path && !/(repeating-)?(linear|radial)-gradient.+/.test(img_path) )
+      if( img_path && !/(repeating-)?(linear|radial)-gradient.+/.test(img_path) ) {
         imgs.push(img_path);
+        console.log(img_path);
+      }
     });
 
     window.images = imgs.length;
@@ -519,7 +523,7 @@ $(document).ready(function() { "use strict";
       if (window.smoothScroll && !window.isMobile){
 
         //lock default scroll
-        event.preventDefault();
+        //event.preventDefault();
 
         if (energy > 1500) { energy = 1500; }
         if (energy < -1000) { energy = -1500; }
@@ -574,7 +578,7 @@ $(document).ready(function() { "use strict";
 
           if (window.smoothScroll){
             //lock default scroll
-            event.preventDefault();
+            //event.preventDefault();
 
             //smooth scroll
             if (energy > 1500) { energy = 1500; }
@@ -655,6 +659,7 @@ $(document).ready(function() { "use strict";
           positionY = $element.offset().top,
           elementHeight = $element.height(),
           halfWay = (window.windowHeight/window.animationTrigger > elementHeight) ? elementHeight/2 : window.windowHeight/window.animationTrigger,
+          
           halfOnScreen = ((positionY < (window.windowHeight + scrollTop - halfWay)) && (positionY > (scrollTop - elementHeight + halfWay))),
           scale = (((scrollTop + window.windowHeight) - positionY) / (window.windowHeight + elementHeight) - 0.5) * 2,
           allowToSelect = true;
@@ -1338,12 +1343,17 @@ $(document).ready(function() { "use strict";
 
 
   $('.popupTrigger[data-popup-id]').on('click', function(){
-    var popupID = $(this).data('popup-id');
-    window.showPopup(popupID);
+    var popupID   = $(this).data('popup-id'),
+        focusOnID = $(this).data('popup-focus-input'); // ID of input to focus on after showing popup
+    if(typeof(focusOnID)!="string" && focusOnID!=""){
+        focusOnID = false;
+    }
+    window.showPopup(popupID, focusOnID);
   });
 
-  window.showPopup = function(id){
+  window.showPopup = function(id, focusOn){
     var popupID = id,
+        focusOnID = focusOn,
         element = $('.popup[data-popup-id="' + popupID + '"]'),
         isAnimated = element.hasClass('animated');
 
@@ -1354,16 +1364,33 @@ $(document).ready(function() { "use strict";
       //set a trigger
       $(window).trigger('popupShown');
 
-      if (isAnimated){
-        setTimeout(function(){
-          $(element).addClass('animate active');
+      function animatePopup() {
+        var dfd = jQuery.Deferred();
+        if (isAnimated){
+          setTimeout(function(){
+            $(element).addClass('animate active');
 
-          clearTimeout(window.clearPopupElementAnimation);
-          window.clearPopupElementAnimation = setTimeout(function(){
-            $(element).find("[class*='ae-']").addClass('done');
-          }, window.effectSpeed + window.cleanupDelay);
-        },100);
+            clearTimeout(window.clearPopupElementAnimation);
+            window.clearPopupElementAnimation = setTimeout(function(){
+              $(element).find("[class*='ae-']").addClass('done');
+              dfd.resolve( "done" );
+            }, window.effectSpeed + window.cleanupDelay);
+          },100);
+        }else{
+          dfd.resolve( "done" );
+        }
+        return dfd.promise();
       }
+       
+      $.when( animatePopup() ).then(
+        function( status ) { // done
+          if(focusOnID){
+            $(element).find("#"+focusOnID).focus();
+          }
+        },
+        function( status ) { }, // fail
+        function( status ) { } // progress
+      );
 
       $html.addClass('popupShown popup_' + popupID);
       $(element).find('.content').scrollTop(0);
@@ -1373,18 +1400,32 @@ $(document).ready(function() { "use strict";
       if (!window.popupShown) window.popupShown = [];
       window.popupShown.push(popupID);
 
-      //Autoplay Iframe
-      if ($(element).hasClass('autoplay')){
-        var $element = $(element),
-            iframe = $element.find('iframe'),
-            HTML5video = $element.find('video');
+      //Autoplay Iframe, replace data-src to src
+      var $element = $(element),
+          iframe = $element.find('iframe'),
+          HTML5video = $element.find('video');
 
-        if ( iframe.length > 0  ) {
-          var iframeSrc = $(iframe).attr('src') ? $(iframe).attr('src') : $(iframe).data('src'),
-              symbol = (iframeSrc.indexOf('?') > -1) ? "&" : "?";
+      if ( iframe.length > 0  ) {
+        var iframeSrc = $(iframe).attr('src') ? $(iframe).attr('src') : $(iframe).data('src'),
+            symbol = (iframeSrc.indexOf('?') > -1) ? "&" : "?";
 
-          $(iframe).attr('src',iframeSrc + symbol + "autoplay=1");
-        } else if (HTML5video.length > 0){
+        if ($(element).hasClass('autoplay')){
+            $(iframe).attr('src',iframeSrc + symbol + "autoplay=1");
+        }else{
+          if(!$(iframe).attr('src')){
+            $(iframe).attr('src',iframeSrc);
+          }
+        }
+      } else if (HTML5video.length > 0){
+        if($(HTML5video).find("source[data-src]").length > 0){
+          $(HTML5video).find("source").each(function(){
+            if(!$(this).attr('src')){
+              $(this).attr('src',$(this).data('src'));
+            }
+          });
+          $(HTML5video)[0].load();
+        }
+        if ($(element).hasClass('autoplay')){
           $(HTML5video)[0].play();
         }
       }
@@ -1401,11 +1442,11 @@ $(document).ready(function() { "use strict";
 
       var popupToHide = popupID ? popupID : window.popupShown.slice(-1)[0],
           $element = $('.popup.visible[data-popup-id="' + popupToHide + '"]'),
-          iframe = $element.find('iframe'),
+          iframe = $element.find('iframe[src]'),
           video = $element.find('video');
 
       //stop iframe autoplay
-      if (iframe.length > 0 ) {
+      if (iframe.length > 0 && $element.hasClass('autoplay')) {
         $(iframe).each(function(n, element){
           var iframeSrc = $(element).attr('src'),
               symbol = (iframeSrc.indexOf('?autoplay') > -1) ? "?" : "&";
@@ -1623,8 +1664,9 @@ $(document).ready(function() { "use strict";
       }
 
       //clickable
-      if ($el.hasClass('clickable') || $el.hasClass('autoplay')){
-        $el.on('click next', function(event){
+      if ($el.hasClass('clickable') || $el.hasClass('autoplay') || $el.hasClass('swipeable')){
+        // go to the next slide
+        $el.on('next', function(event){
 
           var $el = $(this),
               sliderID = $el.data('slider-id'),
@@ -1685,7 +1727,97 @@ $(document).ready(function() { "use strict";
             $html.removeClassByPrefix("slider_" + sliderID).addClass("slider_" + sliderID + "_" + nextIndex);
           }
         });
+
+        // go to the previous slide
+        $el.on('prev', function(event){
+
+          var $el = $(this),
+              sliderID = $el.data('slider-id'),
+              $slider = $('.slider[data-slider-id="'+sliderID+'"]'),
+              clickTarget = event.target;
+
+          //break
+          if($(clickTarget).data('slider-event') == "cancel") return;
+
+          //for multiple sliders
+          $slider.each(function(){
+
+            var $el = $(this),
+                sliderID = $el.data('slider-id'),
+                $selected = $el.children('.selected'),
+                $prevElement = $selected.prevOrLast('li'),
+                nextIndex = $prevElement.index(),
+                $controller = $('.controller[data-slider-id="'+sliderID+'"]'),
+                isAnimated = $el.is('.animated, .animateOnEvent');
+            //uselect old
+            $selected.removeClass('selected').addClass('hide').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function() {
+              $(this).removeClass('hide');
+            });
+
+            //select next
+            $prevElement.removeClass('hide').addClass('selected');
+
+            //set status
+            if (window.sliderStatus) {
+              $html.removeClassByPrefix("slider_" + sliderID).addClass("slider_" + sliderID + "_" + nextIndex);
+            }
+
+            //animated
+            if (isAnimated) {
+              $el.addClass('animateOnEvent');
+              $el.find('li').removeClassByPrefix('ae-').removeClass('do');
+              $el.find('.selected').each(function(index){
+                $(this).removeClassByPrefix('ae-').removeClass('do').addClass('ae-' + (index + 1)).addClass('do');
+              });
+
+              $(window).scroll();
+            }
+
+            if (sliderID && $controller.length > 0){
+              $controller.each(function(){
+                var $controller = $(this);
+
+                $controller.children('.selected').removeClass('selected');
+                $controller.children('li:eq('+nextIndex+')').addClass('selected');
+              });
+            }
+              
+          });
+
+          //set status
+          if (window.sliderStatus) {
+            $html.removeClassByPrefix("slider_" + sliderID).addClass("slider_" + sliderID + "_" + nextIndex);
+          }
+        });
+
+        if ($el.hasClass('clickable') || $el.hasClass('autoplay')){
+          $el.on("click",function(){
+            $(this).trigger("next");
+          });
+        }
+
       }
+
+      // swipeable
+      if ($el.hasClass('swipeable')){
+        var swipeableMinDistance = 50;
+        // touch swipe
+        $el.swipe({
+          swipeStatus:function(event, phase, direction, distance){
+            if(phase=="end" && distance>swipeableMinDistance){
+              if(direction=="right"){
+                $el.trigger("prev");
+              }
+              if(direction=="left"){
+                $el.trigger("next");
+              }
+            }
+          },
+          maxTimeThreshold:0,
+          fingers:'all'
+        });
+      }
+
     });
   }
 
@@ -1844,6 +1976,7 @@ $(document).ready(function() { "use strict";
 
 
   window.dropdownShown = false;
+  window.dropdownInterval = false;
   //click
   $('body').on('click', '.dropdownTrigger', function(){
     showDropdown($(this));
@@ -1866,11 +1999,35 @@ $(document).ready(function() { "use strict";
         $element = $('.dropdown[data-dropdown-id="' + dropdownID + '"]'),
         elementPosition = $this.data('dropdown-position') ? $this.data('dropdown-position') : $element.attr('class'),
         setPosition = $element.data('dropdown-set-position') == false ? false : true,
-        elementPosition = elementPosition.split(' ');
+        elementPosition = elementPosition.split(' '),
+        over = false;
 
+    if(typeof(window.dropdownInterval)=="number"){
+      clearInterval(window.dropdownInterval);
+    }
     //hide
     if (!$isHover) {
       hideDropdown();
+    }else{
+      var over = false;
+      $(document).mousemove(function(e){
+        if(
+          $(e.target).attr("data-dropdown-id")==dropdownID || 
+          $(e.target).closest(".dropdownTrigger.hover[data-dropdown-id="+dropdownID+"]").length ||
+          $(e.target).closest(".dropdown[data-dropdown-id="+dropdownID+"]").length
+        ){
+          over = true;
+        }else{
+          over = false;
+        }
+      });
+      // set interval to check, is mouse over dropdown or it's popup or not
+      window.dropdownInterval = setInterval(function(){
+        if(!over){
+          hideDropdown();
+          clearInterval(window.dropdownInterval);
+        }
+      },300);
     }
 
     //vertical position
@@ -2079,9 +2236,17 @@ $(document).ready(function() { "use strict";
   //delay reveal for dialog window
   $('.dialog.hidden[data-dialog-delay]').each(function(){
     var timeoutDelay = parseFloat($(this).attr('data-dialog-delay')),
-        $element = $(this);
+        $element = $(this),
+        isCookie = $element.attr('data-set-cookie');
 
-    if (!isNaN(timeoutDelay)) {
+    if (isCookie) {
+      var dialogID = $element.data('dialog-id'),
+          cookieName = ($element.data('cookie-name')) ? $element.data('cookie-name') : dialogID;
+
+      isCookie = $.cookie(cookieName) ? true : false;
+    }
+
+    if (!isNaN(timeoutDelay) && !isCookie) {
       setTimeout(function(){
         $element.addClass('reveal').slideDown(500,function(){
           $(this).removeClass('reveal').removeClass('hidden');
