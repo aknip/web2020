@@ -29,6 +29,10 @@ smaller Typography / Font-Sizes:
 
 
 
-##TOOLS:
+## Tools:
 https://beautifier.io/
 http://beautifytools.com/scss-compiler.php
+
+
+## Documentation
+- https://designmodo.com/slides/app/manual/
