@@ -198,65 +198,85 @@
   <!-- Panel Top #09 -->
   <nav class="panel top">
   	<div class="sections">
-      <div class="right"><span class="button actionButton sidebarTrigger" style="background-color: transparent; top: 30px; right: -30px; width: 60px; height: 60px" data-sidebar-id="1"></div>
+
+      <!-- Open navigation button transparent -->
+      <div class="right">
+        <span class="sidebarTrigger" style="background-color: transparent; top: 0px; right: -10px; width: 100px; height: 100px; display: inline-block" data-sidebar-id="navigation-popup">
+        </span>
+      </div>
+
    	</div>
   </nav>
 	
 	
 	
   <!-- Navigation -->
-  <nav class="side square">
-    <div class="navigation">
+  <nav class="side line">
+    <div class="navigation default">
       <ul></ul>
     </div>
   </nav>
 	
 
 	
-  <!-- Sidebar -->
-  <nav class="sidebar" data-sidebar-id="1">
-    <div class="close"><svg>
+  <!-- Navigation popup / sidebar -->
+  <nav class="sidebar top container" data-sidebar-id="navigation-popup">
+    
+    <div class= "content" style="height:100vh; width:100vw; padding: 0">
+
+      <img src="assets/img/ppt-screens-prototpye/Folie26.jpeg">
+
+      <!-- Imagemap by using SVG - for responsive usage -->
+      <svg id="Ebene_1" viewBox="0 0 816.38 459.21" style="position: absolute; top: 0; left: 0">
+        <defs>
+          <style>
+            .backgr{fill:none;}
+            .link{fill:transparent; stroke: #d0b901;}
+            .link2{fill:transparent; stroke: none;}
+          </style>
+        </defs>
+        <rect class="backgr" width="816.38" height="459.21"/>
+        <rect class="link" x="35" y="105" width="120" height="12" onclick="window.changeSlide(1)"></rect>
+        <rect class="link" x="180" y="105" width="120" height="12" onclick="window.changeSlide(2)"></rect>
+      </svg>
+
+      <!-- Close button icon -->
+      <!--
+      <div class="close"><svg>
         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
       </svg></div>
-    <div class="content">
-      <a href="#" class="logo"><svg style="width:310px;height:38px">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-mgm"></use>
-        </svg></a>
-      <ul class="mainMenu margin-top-3">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Servcies</a></li>
-        <li><a href="#">About us</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <ul class="subMenu small opacity-8">
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Terms & Conditions</a></li>
-        <li><a href="#">Privacy Policy</a></li>
-      </ul>
-      <ul class="social opacity-8">
+      -->
 
-        <li><a href="#"><svg>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#linkedin"></use>
-            </svg></a></li>
-        <li><a href="#"><svg>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#xing"></use>
-            </svg></a></li>
-        <li><a href="#"><svg>
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#twitter"></use>
-            </svg></a></li>
-      </ul>
+      <!-- Close button transparent -->
+      <div class="right">
+        <a href="#close">
+          <span class="close" style="background-color: red; top: 0px; right: -10px; width: 150px; height: 150px; display: inline-block" >    
+          </span>
+        </a>
+      </div>
+
+      <!-- Logo -->
+      <!--
+      <a href="#" class="logo">
+        <svg style="width:310px;height:38px">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-mgm"></use>
+        </svg>
+      </a>
+      -->
+    
     </div>
   </nav>
 
 
+
   <!-- mgm-tp.com  01 HOME -->
-  <section class="slide fade-6 kenBurns selected animate active" data-name="mgm-tp-01">
+  <section class="slide fade-6 kenBurns animate active" data-name="mgm-tp-01">
 	  <div class="background" style="background-image:url(assets/img/ppt-screens-prototpye/Folie1.jpeg)">
 	  </div>
 	</section>
 
   <!-- mgm-tp.com  02 -->
-  <section class="slide fade-6 kenBurns selected animate" data-name="mgm-tp-02">
+  <section class="slide fade-6 kenBurns animate" data-name="mgm-tp-02">
 	  <div class="background" style="background-image:url(assets/img/ppt-screens-prototpye/Folie2.jpeg)">
 	  </div>
 	</section>
