@@ -3,3 +3,33 @@
 .popup:not([class*=fade]) {
     background: rgba(164, 174, 188, 0.9);
 }
+
+/* Abstand Navi nach oben */
+.panel.top {
+	margin-top: 30px;
+}
+
+
+/* Hauptnavigation Striche */
+.panel .sections .menu.uppercase li {
+	margin: 0;
+	color: #999;
+	font-weight: 500!important;
+}
+.panel .sections .menu li a {
+    padding: 0 15px;
+}
+.menu>li{
+  border-right: 1px solid #ddd;
+}
+.menu>li:last-child{
+   border: none;
+}
+
+
+/* Hauptnavigation Mobile weiß */
+.sidebar {
+	color: #000;
+    background: #fff;
+    box-shadow: 0 10px 40px rgba(0,0,0,.2);
+}

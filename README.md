@@ -1,11 +1,20 @@
 # web2020
 
 
+
+
+## Docs
+
+- https://designmodo.com/slides/app/manual/
+
+
+
+## Changes
+
 Uses 
 - Slides 5.1
 - jQuery v3.5.1 
 - Framework7 5.1.3
-
 
 
 Changes due to Framework7 compatibility:
