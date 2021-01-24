@@ -9,6 +9,26 @@
 	margin-top: 30px;
 }
 
+/* SVG-Infografik ausblenden, wenn informiert (um gepinnte Haupt-Infografik nicht zu überlagern) */
+.doAnimation #infografik {
+	display: none;
+}
+
+/* Vertikale Abstände abhängig von Slides-Konfig: Scrolling oder Chained/Echte Slides  */
+body.scroll .additionalVerticalPadding {
+	margin-top: 0%!important;
+}
+
+body.chained .additionalVerticalPadding {
+	margin-top: 0!important;
+}
+
+body.chained .noTopSpaces {
+	padding-top: 0!important;
+}
+
+
+
 
 /* Hauptnavigation Striche */
 .panel .sections .menu.uppercase li {
