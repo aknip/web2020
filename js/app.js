@@ -1,4 +1,24 @@
 
+// Detect browser and platforms
+
+const uA = navigator.userAgent;
+const vendor = navigator.vendor;
+const isSafariDesktop = /Safari/i.test(uA) && /Apple Computer/.test(vendor) && !/Mobi|Android/i.test(uA); 
+const isMobile = /Android|webOS|iPhone|iPad|iPod/i.test(uA);
+console.log('isSafariDesktop ' + isSafariDesktop);
+console.log('isMobile ' + isMobile);
+
+
+
+// Run main script after DOM initialization  of Slides
+setTimeout(function(){
+
+  mainApp();
+      
+}, 500); 
+
+
+
 var app, messages
 
 function mainApp() {
@@ -282,5 +302,5 @@ function mainApp() {
 
 }
 
-mainApp();
+
 
