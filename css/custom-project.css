@@ -15,6 +15,7 @@
 	max-width: 1300px
 }
 
+
 /* SVG Bestandteil/Gruppe "#Infografik" ausblenden, wenn animiert (um gepinnte Haupt-Infografik nicht zu überlagern) */
 .doAnimation #infografik {
 	display: none;
