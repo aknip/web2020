@@ -9,18 +9,34 @@
 	margin-top: 30px;
 }
 
-/* SVG-Infografik ausblenden, wenn informiert (um gepinnte Haupt-Infografik nicht zu überlagern) */
+
+/* Max Width für SVG Infografiken aus Illustrator */
+.pinAnimation1 svg, .pinAnimation2 svg, .pinAnimation3 svg,  {
+	max-width: 1300px
+}
+
+/* SVG Bestandteil/Gruppe "#Infografik" ausblenden, wenn animiert (um gepinnte Haupt-Infografik nicht zu überlagern) */
 .doAnimation #infografik {
 	display: none;
 }
 
 /* Vertikale Abstände abhängig von Slides-Konfig: Scrolling oder Chained/Echte Slides  */
 body.scroll .additionalVerticalPadding {
-	margin-top: 0%!important;
+	margin-top: 10%!important;
 }
 
 body.chained .additionalVerticalPadding {
 	margin-top: 0!important;
+}
+
+body.scroll .additionalVerticalPaddingHome {
+	margin-top: 0%!important;
+	padding-top: 10%!important;
+}
+
+body.chained .additionalVerticalPaddingHome {
+	margin-top: 0!important;
+	padding-top: 0%!important;
 }
 
 body.chained .noTopSpaces {
