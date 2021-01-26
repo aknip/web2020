@@ -522,10 +522,12 @@
     const vendor = navigator.vendor;
     const isSafariDesktop = /Safari/i.test(uA) && /Apple Computer/.test(vendor) && !/Mobi|Android/i.test(uA);
     const isFirefoxDesktop = /Firefox/i.test(uA); 
+    const isEdgeDesktop = /Edge/i.test(uA); 
+    const isIEDesktop = /.NET/i.test(uA); 
     const isMobile = /Android|webOS|iPhone|iPad|iPod/i.test(uA);
     
     // decide to animate or not
-    var doAnimation = (isFirefoxDesktop == false) ;
+    var doAnimation = (isFirefoxDesktop == false) && (isEdgeDesktop == false) && (isIEDesktop == false) ;
 
     //doAnimation = true;
 
