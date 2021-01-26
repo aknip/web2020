@@ -6,7 +6,9 @@
 
 /* Abstand Navi nach oben */
 .panel.top {
-	margin-top: 30px;
+	padding-top: 30px;
+	padding-bottom: 0px;
+	box-shadow: none;
 }
 
 
@@ -15,6 +17,14 @@
 	max-width: 1300px
 }
 
+body.scroll .infografik2, .infografik3 {
+	display: none;
+}
+
+
+.slide {
+	/*overflow: visible;*/
+}
 
 /* SVG Bestandteil/Gruppe "#Infografik" ausblenden, wenn animiert (um gepinnte Haupt-Infografik nicht zu überlagern) */
 .doAnimation #infografik {
