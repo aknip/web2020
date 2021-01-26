@@ -515,19 +515,23 @@
   <script src="js/gsap/ScrollTrigger3-4-2.min.js" type="text/javascript"></script>
 
   <script>
-
+    //
     // check for browser types
+    //
     const uA = navigator.userAgent;
     const vendor = navigator.vendor;
-    const isSafariDesktop = /Safari/i.test(uA) && /Apple Computer/.test(vendor) && !/Mobi|Android/i.test(uA); 
+    const isSafariDesktop = /Safari/i.test(uA) && /Apple Computer/.test(vendor) && !/Mobi|Android/i.test(uA);
+    const isFirefoxDesktop = /Firefox/i.test(uA); 
     const isMobile = /Android|webOS|iPhone|iPad|iPod/i.test(uA);
     
     // decide to animate or not
-    var doAnimation = !isSafariDesktop;
+    var doAnimation = (isFirefoxDesktop == false) ;
 
-    doAnimation = true;
+    //doAnimation = true;
 
-
+    //
+    // fix scroll position of first slide 
+    //
     var hash = location.hash.substr(1);
     if ((hash == "home") || (hash == "")) {
       setTimeout(function(){
@@ -538,8 +542,9 @@
 
 
 
-
+    //
     // Clicks / Links für Hauptnavigation 
+    //
     var customLinkElements = document.getElementsByClassName("customLinkClick");
 
     var customLinkClick = function(event) {
@@ -557,7 +562,9 @@
 
 
 
-    
+    //
+    // Animaation
+    //    
     if (doAnimation) {
 
       document.getElementById("body").classList.add('scroll');
@@ -583,10 +590,8 @@
     }
     else {
 
-      document.getElementById("body").classList.add('chained');
-      document.getElementById("body").classList.remove('scroll');
-
-      // klassen in body einfügen (mobile, nosafari, ... => css abhängig davon spezifizieren !!!!!!!!!!!)
+      // document.getElementById("body").classList.add('chained');
+      // document.getElementById("body").classList.remove('scroll');
 
     }
 

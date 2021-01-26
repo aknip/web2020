@@ -17,9 +17,6 @@
 	max-width: 1300px
 }
 
-body.scroll .infografik2, .infografik3 {
-	display: none;
-}
 
 
 .slide {
@@ -30,6 +27,10 @@ body.scroll .infografik2, .infografik3 {
 .doAnimation #infografik {
 	display: none;
 }
+.doAnimation .infografik2, .doAnimation .infografik3 {
+	display: none;
+}
+
 
 /* Vertikale Abstände abhängig von Slides-Konfig: Scrolling oder Chained/Echte Slides  */
 body.scroll .additionalVerticalPadding {
