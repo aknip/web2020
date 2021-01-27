@@ -426,51 +426,7 @@
 
   <script>
 
-    // check for browser types
-    const uA = navigator.userAgent;
-    const vendor = navigator.vendor;
-    const isSafariDesktop = /Safari/i.test(uA) && /Apple Computer/.test(vendor) && !/Mobi|Android/i.test(uA); 
-    const isMobile = /Android|webOS|iPhone|iPad|iPod/i.test(uA);
     
-    // decide to animate or not
-    var doAnimation = !isSafariDesktop;
-
-    doAnimation = false;
-
-
-    var hash = location.hash.substr(1);
-    if ((hash == "home") || (hash == "")) {
-      setTimeout(function(){
-          window.changeSlide(1);
-        }, 300); 
-    }
-    
-    if (doAnimation) {
-      // hide info graphics for animation
-      var style = document.createElement('style');
-      style.id = 'agentStyles';
-      style.innerHTML = '#infografik {display: none;}';
-      document.head.appendChild(style);
-      // remove dynamic style
-      //var styleItem = document.getElementById('agentStyles');
-      //if (styleItem) {styleItem.parentNode.removeChild(styleItem)}
-
-      // Run main script after DOM initialization  of Slides
-      setTimeout(function(){
-        mainApp(); 
-      }, 500); 
-
-    }
-    else {
-
-    }
-
-    
-    function mainApp() {
-
-      gsap.registerPlugin(ScrollTrigger);
-  
-    }
 
 
   </script>
