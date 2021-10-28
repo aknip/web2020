@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <base href="./">
-  <title>northport Chat</title>
+  <title>northport</title>
   
   <meta name="description" content="northport - Gemeinschaft, Assekuradeur-Services, Software-Services für die digitale Industrieversicherung" />
   <meta property="og:locale" content="de_DE" />
@@ -181,7 +181,7 @@
   -->
 
   <!-- Panel Top #09 -->
-  <nav class="panel top">
+  <nav class="panel top" style="background-color:white;">
     <div class="sections desktop">
       <div class="left"><a href="#" title="Slides Framework"><svg style="width:240px;height:38px">
             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#logo-northport"></use>
@@ -189,6 +189,7 @@
       <div class="right">
         <ul class="menu uppercase trim">
           <li><a class="customLinkClick" href="home">Über uns</a></li>
+          <li><a class="customLinkClick" href="produkte">Produkte</a></li>
           <li><a class="customLinkClick" href="konzepte">Konzepte</a></li>
           <li><a class="customLinkClick" href="loesungen">Lösungen</a></li>
           <li><a class="customLinkClick" href="plattform">Plattform</a></li>
@@ -218,6 +219,7 @@
         </svg></a>
       <ul class="mainMenu margin-top-3">
           <li><a class="customLinkClick" href="home">Über uns</a></li>
+          <li><a class="customLinkClick" href="produkte">Produkte</a></li>
           <li><a class="customLinkClick" href="konzepte">Konzepte</a></li>
           <li><a class="customLinkClick" href="loesungen">Lösungen</a></li>
           <li><a class="customLinkClick" href="plattform">Plattform</a></li>
@@ -265,6 +267,12 @@
               </li>
               <li class="col-6-12 left hideForPhablet hideForTablet">
                 <img class="ipad-31 margin-bottom-tablet-4" src="assets/svg/northport-logo-weiss-schatten.svg" width="850"/>
+				
+				<!-- CSS ändern, damit Hintergrund nicht abgeschnitten wird:
+					.ipad-31 {
+					margin: -25% 0 -84%;
+					}-->
+					
               </li>
             </ul>
           </div>
@@ -272,26 +280,74 @@
         </div>
       </div>
     </div>
-    
+
+
+
+
+
+
+<!-- PRODUKTE UND SERVICES -->
+
+
+
+<section class="slide whiteSlide" data-name="produkte">
+  <div  id="produkte" class="content">
+    <div class="container">
+      <div class="wrap">
+
+        <div class="fix-8-12">  
+		
+		  <h2 class="margin-bottom-3 ae-1" style="color: #077997; font-weight: 300; text-align:center;">Digitale Produkte und Services</h2>
+          <p class="light ae-2 margin-bottom-4">Direkter Abschluss von Versicherungen für Makler</p>
+		
+		
+          <ul class="flex equal later fromCenter">
+            <li class="col-6-12 margin-bottom-tablet-2">
+              <div class="pad shadowHover padding-0 ae-1">
+                <div class="thumbnail-70">
+                  <img class="wide" src="assets/img/thumb_wassersport.JPG" alt="Image">
+                </div>
+                <div class="info-70">
+                  <p class="smaller bold uppercase opacity-4 margin-bottom-1 margin-top-0">northport</p>
+                  <h4 class="smaller margin-bottom-1">Wassersport-<br>Versicherung
+</h4>
+                  <p class="small opacity-8 margin-bottom-2 equalElement">Yachtversicherungen, vom Angebot bis hin zur Schadenabwicklung - alles aus einer Hand.</p>
+                   <a href="wassersportversicherung.html" class="button green rounded crop small" style="text-transform:uppercase; letter-spacing:1px!important;">Beitrag Berechnen</a>
+                </div>
+              </div>
+            </li>
+
+              
+            <li class="col-6-12">
+              <div class="pad shadowHover padding-0 ae-3">
+                <div class="thumbnail-70">
+                  <img class="wide" src="assets/img/thumb_managerhaftpflicht.JPG" alt="Image">
+                </div>
+                <div class="info-70">
+                  <p class="smaller bold uppercase opacity-4 margin-bottom-1 margin-top-0">northport</p>
+                  <h4 class="smaller margin-bottom-1">D&O Managerhaftpflicht- Versicherung
+</h4>
+                  <p class="small opacity-8 margin-bottom-2 equalElement">Schutz für Unternehmensleiter gegen Ansprüche des Unternehmens und Dritter. </p>
+                  <a href="managerhaftpflicht.html" class="button green rounded crop small" style="text-transform:uppercase; letter-spacing:1px!important;">Beitrag Berechnen</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        
+      </div> 
+    </div>
+  </div>
   
-
-
-  
-
-
-
-
-
-
-
+</section>
 
 
 
 
 
   <!-- KONZEPTE -->
-  
-    <div id="konzepte" class="content">
+ <section class="slide whiteSlide" data-name="konzepte" id="konzepte"> 
+    <div class="content">
       <div class="container">
           
           <div id="animationStart"></div>  
@@ -335,7 +391,7 @@
       </div>      
     </div>   
   
-
+</section>
 
 
 
@@ -355,7 +411,9 @@
 
 
   <!-- LÖSUNGEN -->
-    <div id="loesungen" class="content">
+  
+ <section class="slide whiteSlide" data-name="loesungen"  id="loesungen"> 
+    <div class="content">
       <div class="container">
           <!-- Desktop -->
           <div class="hideForPhablet additionalVerticalPadding pinAnimation2"> 
@@ -403,7 +461,7 @@
 
       </div>      
     </div>   
-  
+</section>  
 
 
 
@@ -411,8 +469,8 @@
 
 
   <!-- PLATTFORM -->
-  
-    <div id="plattform" class="content">
+ <section class="slide whiteSlide" data-name="plattform"  id="plattform" > 
+    <div class="content">
       <div class="container">
           <!-- Desktop -->
           <div class="hideForPhablet additionalVerticalPadding pinAnimation3"> 
@@ -452,7 +510,7 @@
 
       </div>      
     </div>   
-  
+</section>  
 
 
 
@@ -467,8 +525,8 @@
 
   <!-- PAGE 4 -->
   <!-- White Slide #61 -->
-  
-    <div id="kontakt" class="content">
+  <section class="slide whiteSlide" data-name="kontakt"  id="kontakt" >  
+    <div class="content">
       <div class="container">
         <div class="wrap left top pinAnimation4">
 
@@ -574,17 +632,6 @@
     doAnimation = false;
 
 
-    //
-    // fix scroll position of first slide 
-    //
-    var hash = location.hash.substr(1);
-    if (hash == "") {
-      hash = "home"
-    }
-    setTimeout(function(){
-      //document.getElementById(hash).scrollIntoView({block: "end", behavior: "smooth"})
-      document.getElementById('home').scrollIntoView({block: "end", behavior: "smooth"})
-    }, 1200); 
 
 
 
